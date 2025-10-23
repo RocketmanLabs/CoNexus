@@ -1,0 +1,14 @@
+﻿global using Microsoft.AspNetCore.Mvc;
+global using CoNexus.Api.Domain;
+global using CoNexus.Api.Domain.Exceptions;
+global using CoNexus.Api.Domain.ExternalEntities;
+global using CoNexus.Api.Infrastructure;
+global using CoNexus.Api.Infrastructure.CQRS;
+global using CoNexus.Api.Infrastructure.CQRS.Commands;
+global using CoNexus.Api.Infrastructure.CQRS.Commands.Handlers;
+global using CoNexus.Api.Infrastructure.DTOs;
+global using CoNexus.Api.Infrastructure.Interfaces;
+global using CoNexus.Api.Infrastructure.CQRS.Queries;
+global using CoNexus.Api.Infrastructure.CQRS.Queries.Handlers;
+global using CoNexus.Api.Infrastructure.Repositories;
+global using CoNexus.Api.Infrastructure.Results;
