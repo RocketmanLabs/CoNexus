@@ -15,11 +15,9 @@ public class Scale : BaseEntity
 
 	public static Scale Create(int tenantId, string title)
 	{
-		if (tenantId <= 0)
-			throw new InvalidExternalEntityException("TenantId must be positive");
+		if (tenantId <= 0) throw new InvalidExternalEntityException("TenantId must be positive");
 
-		if (string.IsNullOrWhiteSpace(title))
-			throw new InvalidExternalEntityException("Scale title is required");
+		if (string.IsNullOrWhiteSpace(title)) throw new InvalidExternalEntityException("Scale title is required");
 
 		return new Scale
 		{
@@ -40,6 +38,6 @@ public class Scale : BaseEntity
 	}
 
 	// Navigation properties
-	public virtual Tenant Tenant { get; private set; } = null!;
+	public virtual Xn Tenant { get; private set; } = null!;
 	public virtual ICollection<Choice> Choices { get; private set; } = [];
 }

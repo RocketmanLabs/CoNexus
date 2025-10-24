@@ -1,16 +1,12 @@
 /* Program.cs
  *
- * Entry point and configuration for the CoNexus Survey Service
+ * Entry point and app configuration for the CoNexus Survey Service.
  *
  *
  * Changelog:
  * 2025.08.31 initial
  *
  */
-
-using CoNexus.Api.Infrastructure.Interfaces;
-using Microsoft.EntityFrameworkCore;
-
 namespace CoNexus.Api;
 
 internal class Program
@@ -40,7 +36,7 @@ internal class Program
 			));
 
 		// Infrastructure - Repositories
-		builder.Services.AddScoped<IUserRepository, XnRepository>();
+		builder.Services.AddScoped<IXnRepository, XnRepository>();
 		builder.Services.AddScoped<ISurveyRepository, SurveyRepository>();
 		builder.Services.AddScoped<IPublicationRepository, PublicationRepository>();
 		builder.Services.AddScoped<IResponseRepository, ResponseRepository>();

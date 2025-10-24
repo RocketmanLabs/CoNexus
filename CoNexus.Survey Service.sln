@@ -1,13 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36616.10 d17.14
+VisualStudioVersion = 17.14.36616.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoNexus.Api", "CoNexus.Api\CoNexus.Api.csproj", "{A8E63C0E-1305-1B41-F23F-D88D592279AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoNexus.Api.Domain", "CoNexus.Api.Domain\CoNexus.Api.Domain.csproj", "{BCADCDF4-1905-4A5B-919E-7DEB4C803FAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoNexus.Api.Infrastructure", "..\CoNexus.Api.Infrastructure\CoNexus.Api.Infrastructure.csproj", "{3A2B13B2-BF4C-42CF-BBDC-DD035B7103B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoNexus.Api.Infrastructure", "CoNexus.Api.Infrastructure\CoNexus.Api.Infrastructure.csproj", "{43E4A09E-D113-E5C8-A599-2BE3B897B284}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prompts", "Prompts", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		#1 CoNexus initial spec.prompt.txt = #1 CoNexus initial spec.prompt.txt
+		#2 New general requirements.prompt.txt = #2 New general requirements.prompt.txt
+		#3 Creating Xn and assignments.prompt.txt = #3 Creating Xn and assignments.prompt.txt
+		#3a Creating Xn and assignments.prompt.txt = #3a Creating Xn and assignments.prompt.txt
+		#3a2 Fixup User (to Xn), UserResponse (to Vote).prompt.txt = #3a2 Fixup User (to Xn), UserResponse (to Vote).prompt.txt
+		#3b CoNexus Dialogues.prompt.txt = #3b CoNexus Dialogues.prompt.txt
+		#4 CoNexus Dialogues.prompt.txt = #4 CoNexus Dialogues.prompt.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +34,10 @@ Global
 		{BCADCDF4-1905-4A5B-919E-7DEB4C803FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCADCDF4-1905-4A5B-919E-7DEB4C803FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCADCDF4-1905-4A5B-919E-7DEB4C803FAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A2B13B2-BF4C-42CF-BBDC-DD035B7103B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A2B13B2-BF4C-42CF-BBDC-DD035B7103B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A2B13B2-BF4C-42CF-BBDC-DD035B7103B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A2B13B2-BF4C-42CF-BBDC-DD035B7103B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43E4A09E-D113-E5C8-A599-2BE3B897B284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E4A09E-D113-E5C8-A599-2BE3B897B284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E4A09E-D113-E5C8-A599-2BE3B897B284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E4A09E-D113-E5C8-A599-2BE3B897B284}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

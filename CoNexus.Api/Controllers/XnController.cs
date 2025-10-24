@@ -2,12 +2,12 @@ namespace CoNexus.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class UsersController : ControllerBase
+public class XnController : ControllerBase
 {
-	private readonly SyncUsersCommandHandler _syncUsersHandler;
+	private readonly SyncXnsCommandHandler _syncUsersHandler;
 	private readonly GetUserQueryHandler _getUserHandler;
 
-	public UsersController(
+	public XnController(
 		SyncUsersCommandHandler syncUsersHandler,
 		GetUserQueryHandler getUserHandler)
 	{

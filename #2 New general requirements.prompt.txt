@@ -1,0 +1,1 @@
+#2: New general requirements have emerged: this app must be multi-tenant, and it is first being used to administer surveys at tenant Events (large gatherings of people) and Sessions (content delivery by facilitators).  We need new entities, and this will ripple through all layers.

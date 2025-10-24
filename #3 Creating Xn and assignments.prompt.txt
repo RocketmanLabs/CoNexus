@@ -1,0 +1,9 @@
+#3a The CoNexus.Api.Domain.Xn class handles 'external entities' that are sync'd from a CRM that is logged in to CoNexus.  Each has a similar structure, so they share a model. There are six XnTypes: Tenant (the differentiator in the multi-tenant CoNexus app); Event (a large gathering of people); Session (content delivery activities), Evos (EVO = "Event Organizers", local admins that run CoNexus during an Event), Presenters (subject matter experts that deliver content in Sessions), and Attendees.
+
+We will add code to the Files in this project so that we can assign Xns to each other for the following use cases:
+
+1. Tenants and their associated data must be isolated from every other Tenant, and can be deleted when a Tenant fails to renew their license.  In Xns, Tenant records are referenced (FK to int Xn.Id) by every Event, Session, Evo, Presenter, and Attendee associated with them.
+1. Assign Sessions to Event: Events can have 0-n Sessions.
+2. Assign Evos to Event: Events can have 0-n Evos.
+3. Assign Presenters to Sessions: one Session can have many Presenters, and a Presenter can work on many Sessions.
+4. Attendees have no such relationships.

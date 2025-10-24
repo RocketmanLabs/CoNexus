@@ -1,0 +1,11 @@
+#1 I need to develop a Windows .NET 9 API Survey app that will be a service to a custom CRM. It will be written in C#.  
+
+An existing CRM will provide user records to the Survey app and maintain them through periodic sync calls. 
+
+The Survey app we are designing needs to support: 1) Survey creation and editing; Collection of responses when the CRM requests it; Response aggregation and reporting + CSV export of results. 
+
+Surveys consist of a Survey record which holds 1-n Questions. Questions can be multiple choice (single answer) or free-form text comments. 
+
+Users sync’d from the CRM will respond to the Questions when the CRM requests a survey to be published. Scheduling is the responsibility of the CRM.  Users respond to the Questions and the Survey app will track which Questions have been answered. 
+
+Results will be presented per user, per Question and per Survey, with the last two calculating N, mean, median, stddev, and mode(s).

@@ -1,0 +1,27 @@
+#3b CoNexus needs a new feature that will allow Attendees to ask questions of Presenters and receive a text reply.  This feature will be called a Dialogue, and it will become a new SurveyType, and be instantiated by creating a Survey of that type and associating it with an Event or Session Xn. Dialogue Surveys provide a way to for Attendees to do Q&A.  NOTE: This feature is not a threaded discussion.  There are no 'replies'. 
+
+ARCHITECTURE NOTE: Because of the similarities in the Domain models for all External Entities, they should be stored in a common table with an XnType enum value to identify their type.
+
+GENERAL NOTE: CoNexus does not collect personal information in any record.  Tenants will have their company name in Xn.Title, Events and Sessions will have the Event Title and Session Title stored there, and the users (Attendees, EVOs, and Presenters) do not use Xn.Title.
+
+Dialogue Surveys for Events
+-------------------------------------
+1. EVO creates a Dialogue Survey and assigns it to an Event. Dialogue Surveys have an EventSupport flag that will be set when attached to an Event. The Survey will be used for tech support, answering Event questions, etc.
+2. When Published, the Dialogue Survey becomes visible and interactive to Attendees (as questioners) and EVOs (as answerers) on their devices.
+3. When Closed, the Dialogue Survey is no longer interactive for Attendees.  EVOs can still send answers.  The Dialogue Survey becomes a read-only resource for Attendees.
+
+Dialogue Surveys for Sessions
+-----------------------------
+1. EVO creates a Dialogue Survey and assigns it to a Session. Dialogue Surveys have an EventSupport flag that will be cleared when attached to a Session. The Survey will be used for Q&A with the Presenters of the selected Session.
+2. When Published, the Dialogue Survey becomes visible and interactive to Attendees (as questioners) and the Presenters assigned to the selected Session (as answerers) on their devices.
+3. When Closed, the Dialogue Survey is no longer interactive for Attendees.  Presenters can still send answers.  The Dialogue Survey becomes a read-only resource for Attendees.
+
+Operations common to Dialogue Surveys for Events, and for Sessions
+------------------------------------------------------------------
+4a. When an Attendee wants to ask a Dialogue Question, their client software (which we are not writing) shows a list of unanswered questions. If they find one that matches theirs, they select it, raising the Dialogue Question's priority.
+4b. After the list of unanswered Dialogue Questions, there will be a list of answered questions.  These are read-only. If the Attendee does not select something, they can enter a freeform text Dialogue Question, which will be placed in the unanswered list.
+5. EVOs and Presenters receiving Dialogue Questions do not have to answer any of them.
+6. Multiple EVOs and Presenters can respond to a single Question.
+7. All Dialogue Questions and Dialogue Answers are submitted anonymously.
+8a. When a Dialogue Question is posted, or the priority of any unanswered question changes, the answerer is notified, and opens their copy of the Dialogue Survey.  There they can look at the list of unanswered questions and the list of answered questions, and select one to answer.  
+8b. They enter their Dialogue Answer, which is sent back to CoNexus, who refreshes everybody's view of the Dialogue Survey.

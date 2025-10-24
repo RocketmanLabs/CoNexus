@@ -13,6 +13,6 @@ public class ValidationException : DomainException
     public ValidationException(string error) 
         : base("Validation failed")
     {
-        Errors = new List<string> { error };
+        Errors = [error];
     }
 }

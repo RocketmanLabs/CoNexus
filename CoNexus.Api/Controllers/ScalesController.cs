@@ -65,13 +65,29 @@ public class ScalesController : ControllerBase
 	}
 
 	/// <summary>
-	/// Get all scales
+	/// Get Scales for a single Tenant.
 	/// </summary>
 	[HttpGet]
 	[ProducesResponseType(200)]
-	public async Task<IActionResult> GetAllScales([FromQuery] bool includeUsageCount = false, CancellationToken cancellationToken)
+	public async Task<IActionResult> GetAllScales([FromHeader] string tenantXid,
+												   [FromQuery] bool includeUsageCount = false,
+												   CancellationToken cancellationToken = default)
 	{
-		var query = new GetAllScalesQuery(includeUsageCount);
+		var query = new GetAllScalesQuery(tenantXId, includeUsageCount);
+		var scales = await _getAllScalesHandler.Handle(query, cancellationToken);
+		return Ok(scales);
+	}
+
+	/// <summary>
+	/// Get Scale Library.
+	/// </summary>
+	[HttpGet]
+	[ProducesResponseType(200)]
+	public async Task<IActionResult> GetAllScales([FromHeader] string tenantXid,
+												   [FromQuery] bool includeUsageCount = false,
+												   CancellationToken cancellationToken = default)
+	{
+		var query = new GetAllScalesQuery(tenantXId, includeUsageCount);
 		var scales = await _getAllScalesHandler.Handle(query, cancellationToken);
 		return Ok(scales);
 	}
@@ -83,11 +99,11 @@ public class ScalesController : ControllerBase
 	[ProducesResponseType(200)]
 	[ProducesResponseType(404)]
 	[ProducesResponseType(400)]
-	public async Task<IActionResult> UpdateScale(int id, [FromBody] UpdateScaleRequest request, CancellationToken cancellationToken)
+	public async Task<IActionResult> UpdateScale(int id, [FromBody] UpdateScaleRequest rq, CancellationToken cancellationToken)
 	{
 		try
 		{
-			var command = new UpdateScaleCommand(id, request.Title, request.Choices);
+			var command = new UpdateScaleCommand(id, rq.Title, rq.Choices);
 			var scaleId = await _updateHandler.Handle(command, cancellationToken);
 			var scale = await _getScaleHandler.Handle(new GetScaleQuery(scaleId), cancellationToken);
 			return Ok(scale);

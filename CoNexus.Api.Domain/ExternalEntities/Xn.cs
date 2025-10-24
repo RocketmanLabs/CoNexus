@@ -33,7 +33,6 @@ public abstract class Xn : BaseEntity
 	/// <summary>
 	/// External ID - GUID v4 from CRM (unique per Tenant)
 	/// </summary>
-	[Required]
 	public string XId { get; set; }
 
 	/// <summary>
@@ -45,6 +44,11 @@ public abstract class Xn : BaseEntity
 	/// Tenant ID - FK to Tenant (not nullable for non-Tenant entities).
 	/// </summary>
 	public int? TenantId { get; set; }
+
+	/// <summary>
+	/// Sets the type for this external entity.
+	/// </summary>
+	public XnType XnType { get; set; }
 
 	/// <summary>
 	/// Called to update the Title field of any ExternalEntity.

@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CoNexus.Api.Infrastructure\CoNexus.Api.Infrastructure.csproj" />
     <ProjectReference Include="..\CoNexus.Api.Domain\CoNexus.Api.Domain.csproj" />
+    <ProjectReference Include="..\CoNexus.Api.Infrastructure\CoNexus.Api.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,3 @@
+(#3a2) 1. Correct references to a User entity by changing them to an Xn entity.
+2. Correct references to a UserResponse entity by changing them to a Vote entity.
+

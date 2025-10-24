@@ -2,6 +2,7 @@
 
 public enum SyncOp
 {
-	Save = 1,
-	Remove
+	New = 1,
+	Changed,
+	Gone
 }
